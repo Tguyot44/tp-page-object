@@ -11,7 +11,7 @@ class Productpage:
 
     def __init__(self, driver: wd.Chrome):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 3)
+        self.wait = WebDriverWait(driver, 10)
 
     def add_to_cart(self):
         self.wait.until(expected_conditions.element_to_be_clickable(

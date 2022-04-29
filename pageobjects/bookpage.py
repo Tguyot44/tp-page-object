@@ -10,7 +10,7 @@ class Bookpage:
 
     def __init__(self, driver: wd.Chrome):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 3)
+        self.wait = WebDriverWait(driver, 10)
 
     def select_first_book_nouveautes(self):
         self.wait.until(expected_conditions.element_to_be_clickable(

@@ -12,7 +12,7 @@ class Cartpage:
 
     def __init__(self, driver: wd.Chrome):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 3)
+        self.wait = WebDriverWait(driver, 10)
 
     def change_quantity(self, desired_quantity):
         self.wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, self.quantity_dropdown_selector)))

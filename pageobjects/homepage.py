@@ -14,7 +14,7 @@ class Homepage:
 
     def __init__(self, driver: wd.Chrome):
         self.driver = driver
-        self.wait = WebDriverWait(driver,3)
+        self.wait = WebDriverWait(driver,10)
 
     def open_all_menu(self):
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.hamburguer_menu_selector)))
@@ -27,7 +27,9 @@ class Homepage:
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.tous_les_livres_selector)))
 
     def open_all_books(self):
-       self.driver.find_element(By.CSS_SELECTOR, self.tous_les_livres_selector).click()
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.tous_les_livres_selector)))
+        self.driver.find_element(By.CSS_SELECTOR, self.tous_les_livres_selector).click()
 
     def closeCookie(self):
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.cookie_button_selector)))
         self.driver.find_element(By.CSS_SELECTOR, self.cookie_button_selector).click()
