@@ -14,6 +14,9 @@ class Confirmationpage:
         self.wait = WebDriverWait(driver, 3)
 
     def open_cart(self):
+        self.wait.until(expected_conditions.element_to_be_clickable((
+            By.CSS_SELECTOR, self.cart_selector
+        )))
         self.driver.find_element(By.CSS_SELECTOR, self.cart_selector).click()
         self.wait.until(expected_conditions.visibility_of_element_located((
             By.CSS_SELECTOR, self.checkout_selector

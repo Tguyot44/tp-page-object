@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from pageobjects import homepage, bookpage \
     , productpage, confirmationpage, cartpage
@@ -9,7 +11,6 @@ def test_amazon1():
     driver = webdriver.Chrome()
     driver.get("https://amazon.fr/")
     driver.maximize_window()
-    driver.implicitly_wait(3)
 
     hmpage = homepage.Homepage(driver)
     hmpage.closeCookie()
