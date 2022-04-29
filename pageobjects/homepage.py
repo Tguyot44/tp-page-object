@@ -27,7 +27,7 @@ class Homepage:
         self.wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.tous_les_livres_selector)))
 
     def open_all_books(self):
-       self.driver.find_element(By.CSS_SELECTOR, self.tous_les_livres_selector)
+       self.driver.find_element(By.CSS_SELECTOR, self.tous_les_livres_selector).click()
 
     def closeCookie(self):
         self.driver.find_element(By.CSS_SELECTOR, self.cookie_button_selector).click()
